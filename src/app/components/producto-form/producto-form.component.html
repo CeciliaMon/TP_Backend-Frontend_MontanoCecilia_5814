@@ -1,0 +1,54 @@
+<div class="card">
+  <div class="card-header">
+    GESTION DE PRODUCTOS
+  </div>
+  <div class="card-body">
+    <form #productoForm="ngForm">
+      <div class="mb-3">
+        <label for="productonombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="productonombre" name="productonombre" #productonombre="ngModel" [(ngModel)]="producto.nombre" required>
+        <div *ngIf="productonombre.touched && productonombre.invalid" class="alert alert-danger">
+        El campo Nombre es requerido.
+      </div>
+      </div>
+      
+      <div class="mb-3">
+        <label for="productodescripcion" class="form-label">Descripcion</label>
+        <input type="text" class="form-control" id="productodescripcion" name="productodescripcion" #productodescripcion="ngModel" [(ngModel)]="producto.descripcion" minlength="20" required>
+        <div *ngIf="productodescripcion.touched && productodescripcion.errors?.['minlength']" class="alert alert-danger">
+          La descripción debe tener al menos 20 caracteres.
+        </div>
+        <div *ngIf="productodescripcion.touched && productodescripcion.errors?.['required']" class="alert alert-danger">
+          El campo Descripción es requerido.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="productoimagen" class="form-label">Imagen (ingresar url)</label>
+        <input type="text" class="form-control" id="productoimagen" name="productoimagen" #productoimagen="ngModel" [(ngModel)]="producto.imagen" required>
+        <div *ngIf="productoimagen.touched && productoimagen.invalid" class="alert alert-danger">
+          El campo Imagen es requerido.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="productoprecio" class="form-label">Precio</label>
+        <input type="number" class="form-control" id="productoprecio" name="productoprecio" #productoprecio="ngModel" [(ngModel)]="producto.precio" required>
+        <div *ngIf="productoprecio.touched && productoprecio.invalid" class="alert alert-danger">
+          El campo Precio es requerido.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="productostock" class="form-label">Stock</label>
+        <input type="number" class="form-control" id="productostock" name="productostock" #productostock="ngModel" [(ngModel)]="producto.stock" required>
+        <div *ngIf="productostock.touched && productostock.invalid" class="alert alert-danger">
+          El campo Stock es requerido.
+        </div>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="productodestacado" (change)="cambiarDestacado($event)">
+        <label class="form-check-label" for="destacado">Destacado?</label>
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="registrarProducto()">Registrar</button>
+    </form>
+  </div>
+</div>

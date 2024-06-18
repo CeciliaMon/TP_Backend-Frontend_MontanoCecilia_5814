@@ -1,0 +1,38 @@
+<div class="card">
+    <div class="card-header">
+        Formulario de Tickets
+    </div>
+    <div class="card-body">
+        <form>
+            <div class="mb-3">
+                <label for="precioticket" class="form-label">Precio Ticket</label>
+                <input name="precioticket" type="number" class="form-control" id="precioticket" [(ngModel)]="ticket.precioTicket">
+            </div>
+            <div class="mb-3">
+                <label class="col-sm-12 col-md-4" for="categoriaespectador">Categoria de Espectador</label>
+                <select class="form-select" aria-label="Default select example" id="categoriaespectador" name="categoriaespectador" [(ngModel)]="ticket.categoriaEspectador">
+                    <option selected value="">Seleccione el tipo de espectador</option>
+                    <option value="l" (click)="ticket.categoriaEspectador='l'">Local</option>
+                    <option value="e" (click)="ticket.categoriaEspectador='e'">Extranjero</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="col-sm-12 col-md-4" for="fechacompra">Fecha de Compra</label>
+                <input class="form-control col-sm-12 col-md-8" id="fechacompra" type="text" name="fechacompra" [(ngModel)]="ticket.fechaCompra"/>
+            </div>
+            <div class="mb-3">
+                <label class="col-sm-12 col-md-4" for="espectador">Espectador</label>
+                <select class="form-select" aria-label="Default select example" id="espectador" name="espectador" [(ngModel)]="ticket.espectador._id" >
+                    <option selected value="">Seleccione el espectador</option>
+                    <option *ngFor="let es of espectadores" [ngValue]="es._id">{{es.apellido}}, {{es.nombre}}</option>
+                </select>
+            </div>
+
+            <div class="row form-group">
+            <button type="button" class="btn btn-primary mb-3" (click)="registrarTicket()" *ngIf="accion=='new'">Registrar</button>
+            <button type="button" class="btn btn-primary mb-3" *ngIf="accion=='update'" (click)="modificarTicket()">Modificar</button>
+            <button type="button" class="btn btn-secondary mb-3" (click)="atras()">Atras</button>
+</div>
+        </form>
+    </div>
+</div>

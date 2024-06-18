@@ -1,0 +1,15 @@
+.container{
+    background-size: cover;
+    height: 90vh;
+    }
+form{
+    background-color:rgb(248, 221, 225);
+    padding: 10px 10px;
+    margin: 0px;
+}
+form button{
+    width: 100%;
+}
+table td{
+    text-align: center;
+}

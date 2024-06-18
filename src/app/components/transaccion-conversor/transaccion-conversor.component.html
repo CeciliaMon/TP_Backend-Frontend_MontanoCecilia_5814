@@ -1,0 +1,65 @@
+<div class="bg-dark text-white text-center" style="padding: 5px; border-bottom: 1px solid white;" >
+              
+    <h3>Conversor de Divisa</h3>
+    
+</div>
+<form action="" class="bg-danger text-white">
+    <br>
+    <div class="container-divisas">
+        <div class="mb-3">
+            <label for="cantidadorigen" class="form-label">Cantidad Origen</label>
+            <input type="number" class="form-control" id="cantidadorigen" name="cantidadorigen" [(ngModel)]="transaccion.cantidadOrigen">
+        </div>
+        <div md-3>
+            <label for="monedaorigen" class="form-label">De</label>
+            <select class="form-select" aria-label="Default select example" id="monedaorigen" name="monedaorigen" [(ngModel)]="transaccion.monedaOrigen">
+                <option selected>Elegir</option>
+                <option value="USD" (click)="transaccion.monedaOrigen='USD'">USD</option>
+                <option value="EUR" (click)="transaccion.monedaOrigen='EUR'">EUR</option>
+                <option value="GBP" (click)="transaccion.monedaOrigen='GBP'">GBP</option>
+                <option value="JPY" (click)="transaccion.monedaOrigen='JPY'">JPY</option>
+                <option value="CNY" (click)="transaccion.monedaOrigen='CNY'">CNY</option>
+                <option value="AUD" (click)="transaccion.monedaOrigen='AUD'">AUD</option>
+                <option value="BTC" (click)="transaccion.monedaOrigen='BTC'">BTC</option>
+                <option value="ARS" (click)="transaccion.monedaOrigen='ARS'">ARS</option>
+              </select>
+        </div>
+        <br>
+
+        <div class="mb-3">
+            <label for="monedadestino" class="form-label">A</label>
+            <select class="form-select" aria-label="Default select example" id="monedadestino" name="monedadestino" [(ngModel)]="transaccion.monedaDestino">
+                <option selected>Elegir</option>
+                <option value="USD" (click)="transaccion.monedaDestino='USD'">USD</option>
+                <option value="EUR" (click)="transaccion.monedaDestino='EUR'">EUR</option>
+                <option value="GBP" (click)="transaccion.monedaDestino='GBP'">GBP</option>
+                <option value="RUB" (click)="transaccion.monedaDestino='RUB'">RUB</option>
+              </select>
+        </div>
+        <br>
+
+        <div class="mb-3">
+            <label>Cantidad Destino:</label>
+            <input type="number" value="{{transaccion.cantidadDestino}}">
+          </div>
+          <br>
+          <div class="d-grid gap-2">
+            <button class="btn btn-warning" type="button" (click)="obtenerCantidad()">Convertir 
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+              </svg></button>
+          </div>
+          <br>
+          <div class="mb-3">
+            <label for="emailcliente" class="form-label">Email del cliente</label>
+            <input type="email" class="form-control" id="emailcliente" name="emailcliente" [(ngModel)]="transaccion.emailCliente">
+        </div>
+        <br>
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" type="button" (click)="registrarTransaccion()">Registrar Transaccion</button>
+          </div>
+          <br>
+    </div>
+    <br>
+</form>
+

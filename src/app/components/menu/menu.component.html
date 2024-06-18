@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg" style="background-color: #791bd7;" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Backend-Frontend</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Producto
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" [routerLink]="['producto-destacado']">Productos Destacados</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['producto-form', '0']">Agregar producto</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Transaccion
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" [routerLink]="['transaccion-conversor', '0']">Agregar Transaccion</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['transaccion']">Obtener y Filtrar Transacciones</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Ticket
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" [routerLink]="['ticket-form', '0']">Agregar Ticket</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['ticket']">Lista de Tickets y Filtrar Tickets</a></li>
+                </ul>
+              </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>

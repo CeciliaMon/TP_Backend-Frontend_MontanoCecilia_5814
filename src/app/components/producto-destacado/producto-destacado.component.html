@@ -1,0 +1,25 @@
+<div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+  <div class="carousel-inner">
+    <div class="carousel-item active" *ngFor="let p of productos">
+      <div class="card text-bg-light text-center" style="width: 80rem;" >
+        <img [src]="p.imagen" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{p.nombre}}</h5>
+          <p class="card-text">{{p.descripcion}}</p>
+          <p class="card-text">Precio: ${{p.precio}}</p>
+          <div class="card-footer">
+            <small class="text-body-secondary">Cantidad: {{p.stock}}</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
